@@ -1,0 +1,8 @@
+# private overlay — never published
+SUPERGRILL.local.md
+
+# editor / OS noise
+.DS_Store
+Thumbs.db
+*.bak
+*.bak-*
