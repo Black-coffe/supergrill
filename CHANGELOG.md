@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased
+
+Fixed
+- `description` trimmed to 966 characters (the SKILL.md limit is 1,024); duplicate RU/UK trigger forms removed.
+- Discovery narrowed: `brainstorm`, `planning session`, and the proactive "what do you think" clause are gone, and the description now says not to auto-invoke on ordinary planning. The user asks to be interrogated.
+- Budgets are counted in questions, not minutes: the wall-clock figures are dropped from `SKILL.md`, `reference/levels.md`, and the README, with a note that verification spends the same budget.
+- `super` question total corrected to 30–105 across 3–7 stages (the old 50–100 contradicted 3 stages × 10 questions).
+
+Added
+- "Read-only contract" section in `SKILL.md`, and a README note on `disallowed-tools` vs `allowed-tools` in Claude Code.
+
 ## 1.0.0 — 2026-09-16
 
 First public release. Supersedes the private `grill` skill (v1, seven lenses, single depth).
