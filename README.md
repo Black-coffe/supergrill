@@ -59,7 +59,7 @@ Install the Supergrill skill for me.
 
 1. Detect my operating system and shell, and use the matching commands. Do not assume.
 2. The Claude Code skills directory is ~/.claude/skills (on Windows: %USERPROFILE%\.claude\skills). Create it if it does not exist.
-3. If a directory named "supergrill" or "grill" already exists there, rename it to <name>.bak-<today's date> instead of deleting it.
+3. If a directory named "supergrill" or "grill" already exists there, move it OUT of the skills directory to ~/.claude/skills-backup/<name>-<today's date> instead of deleting it. (A backup left inside the skills directory is still loaded as a skill and its triggers would compete with Supergrill's.)
 4. Clone https://github.com/Black-coffe/supergrill into ~/.claude/skills/supergrill (git clone; if git is unavailable, download the repository archive and extract it so that SKILL.md sits directly in ~/.claude/skills/supergrill).
 5. Copy SUPERGRILL.local.example.md to SUPERGRILL.local.md in that directory, then ask me which connected sources, confidential topics, and organisation skills to put in it. If I say none, leave the file with only the Defaults section.
 6. Show me the resulting directory tree and tell me to restart Claude Code so the skill loads.
@@ -81,6 +81,8 @@ New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude\skills" | Out-Null
 git clone https://github.com/Black-coffe/supergrill "$env:USERPROFILE\.claude\skills\supergrill"
 Copy-Item "$env:USERPROFILE\.claude\skills\supergrill\SUPERGRILL.local.example.md" "$env:USERPROFILE\.claude\skills\supergrill\SUPERGRILL.local.md"
 ```
+
+If you had an earlier `grill` skill, move it out of the skills directory first (for example to `~/.claude/skills-backup/`); anything left inside `~/.claude/skills/` is loaded as a skill and would compete for the same trigger words.
 
 Restart Claude Code. The skill is available as `/supergrill` and triggers on natural language (see the trigger words in `SKILL.md`).
 
