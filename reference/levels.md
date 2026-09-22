@@ -14,7 +14,7 @@ The user confirms or overrides. Never silently run a level the user did not conf
 
 ## quick — critical zones only
 
-- **Budget:** up to 10 questions, roughly 10–15 minutes.
+- **Budget:** up to 10 questions.
 - **Recon:** local only — the message, attachments, project files, prior briefs, memory. No connected sources, no web.
 - **Question policy:** only the zones where a wrong answer is expensive. Skip D1 if recon already defines the terms. Go straight for the load-bearing assumption (D3), the sharpest conflict (D4), and the core (D5).
 - **Evidence rule:** answers are triaged, but public facts are only *marked* ✗ unverified in the brief with the cheapest way to verify. No live verification.
@@ -23,7 +23,7 @@ The user confirms or overrides. Never silently run a level the user did not conf
 
 ## deep — the full ladder, adaptive
 
-- **Budget:** 10–30 questions, up to roughly 30 minutes. Say when the budget is at 20 and at 30.
+- **Budget:** 10–30 questions. Say when the budget is at 20 and at 30. Verification is part of the budget, not extra: a load-bearing fact checked before the next question costs a question's worth of it. If a branch needs three checks, spend them and say where the budget now stands.
 - **Recon:** local + connected read-only sources + web (subject to the confidentiality rule in `recon.md`). Run the wider recon right after the level is confirmed, before question 2 at the latest.
 - **Question policy:** full D1–D5 ladder on every open branch. Every question is shaped by all previous answers and by recon: reference them explicitly ("you said X in your last answer; recon shows Y").
 - **Evidence rule:** load-bearing public facts are verified before the next question; other public facts are batched and verified at each wave; private facts are checked against provided documents when possible.
@@ -67,7 +67,7 @@ On resume (any later session, any surface), the brief's state block is the sourc
 
 ### Budget
 
-Total 50–100 questions across stages is normal. Synthesis happens at the end of each stage (partial) and at the end of the last stage (final). The final synthesis includes a **cross-stage consistency pass**: decisions in stage 1 vs answers in stage 5.
+Total 30–105 questions across 3–7 stages; 50–80 is typical. Synthesis happens at the end of each stage (partial) and at the end of the last stage (final). The final synthesis includes a **cross-stage consistency pass**: decisions in stage 1 vs answers in stage 5.
 
 ## Switching levels mid-session
 

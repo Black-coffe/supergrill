@@ -27,8 +27,8 @@ It is a *skill*: a markdown protocol Claude follows. No code, no dependencies, n
 
 | | `quick` | `deep` | `super` |
 |---|---|---|---|
-| Questions | up to 10 | 10–30 | 10–15 per stage, 3–7 stages |
-| Time | 10–15 min | up to 30 min | several sessions |
+| Questions | up to 10 | 10–30 | 10–15 per stage × 3–7 stages (30–105) |
+| Span | one sitting | one sitting | several sessions |
 | Recon | local only | + connected sources + web | full, with a recon report you confirm (Stage 0) |
 | Evidence | facts marked unverified | load-bearing facts verified live | as deep, plus document gates per stage |
 | Structure | critical zones only | full depth ladder, each question shaped by all previous answers | stages with **entry requirements**: bring the cap table before stage 3, or stage 3 honestly runs at `deep` |
@@ -124,6 +124,10 @@ Or in natural language, in any language: *"grill me on the launch plan"*, *"пр
 
 **The brief** lives in `grill/YYYY-MM-DD-<topic>.md` inside your project's docs directory (or where you tell it once). It contains a machine-readable state block, so a `super` grill paused after stage 2 resumes at stage 3 in a new session, and a later grill on a neighbouring topic knows what was already decided.
 
+## Read-only by design
+
+A grill reads and asks; it never acts. Nothing is posted, sent, committed, or changed in any connected system during a session — the only things written are the brief and, on request, an export. The rule lives in the protocol, so it holds on every surface; no sandbox enforces it. In Claude Code you can harden it for specific built-in tools with `disallowed-tools` in the frontmatter of your local copy (`allowed-tools` would not help: it pre-approves tools rather than restricting them, and it cannot express MCP patterns).
+
 ## Private overlay
 
 The public protocol is generic. Your private setup lives in `SUPERGRILL.local.md` (gitignored): names of connected sources, topics that must never reach a web query, organisation skills the grill may hand off to (a fact-checker, a house-style document generator), a glossary, standing constraints. See `SUPERGRILL.local.example.md`.
@@ -147,7 +151,7 @@ docs/grill/                     the brief from the session in which Supergrill g
 ## Design principles
 
 - **Never ask what the environment can tell you.** Recon is not optional; it is scaled to the level.
-- **Depth is a contract.** The user always knows how many questions, how long, and what evidence standard applies.
+- **Depth is a contract.** The user always knows how many questions and what evidence standard applies. Budgets are counted in questions, never in minutes.
 - **Honest downgrade over fake depth.** A stage without its inputs says so.
 - **The brief is the product.** Someone who was not in the session must be able to act on it.
 - **No code in the protocol.** Anything that needs OS-specific tooling is out of scope; the environment's own tools are used when present, and the protocol degrades gracefully when they are not.

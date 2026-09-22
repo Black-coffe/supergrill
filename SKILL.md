@@ -1,6 +1,6 @@
 ---
 name: supergrill
-description: "Supergrill: a relentless, evidence-first structured interview that stress-tests any plan, idea, decision, investment, or text before you act on it. Three depth levels (quick / deep / super), reconnaissance before the first question, live fact triage, contradiction checks every wave, and a brief that survives across sessions. Use when the user wants to brainstorm, plan, validate or pressure-test something, asks to be interviewed about their thinking, or uses trigger words — EN: grill, supergrill, roast my plan/idea, interrogate me, stress-test, brainstorm, planning session, validate this idea, stress-test a claim; RU: гриль, супергриль, прожарка, прожарь (меня/идею/план), брейншторм, допрос, допроси меня, расспроси, планирование, провентилируй, проверь идею, прожарь утверждение; UK: гриль, супергріль, прожарка, прожар, мозковий штурм, допит, допитай мене, розпитай, планування, перевір ідею, прожар твердження. Also use proactively when the user presents a raw plan and asks 'what do you think' before a major commitment. Works with or without documents, in any Claude surface. For plain verification of a public fact against the web with no plan behind it, a dedicated fact-checking skill is the better tool — Supergrill interrogates the user's own thinking."
+description: "Evidence-first structured interrogation that stress-tests a plan, idea, decision, investment, or claim before the user acts on it. Three depth levels (quick / deep / super), reconnaissance before the first question, live fact triage, contradiction checks every wave, and a brief that survives across sessions. Use when the user asks to be questioned, grilled, challenged, or pressure-tested, or uses trigger words — EN: grill, supergrill, roast my plan/idea, interrogate me, stress-test, devil's advocate, validate this idea; RU: гриль, супергриль, прожарка, прожарь (меня/идею/план), допрос, допроси меня, проверь идею, адвокат дьявола; UK: гриль, супергріль, прожарка, прожар, допит, допитай мене, перевір ідею, адвокат диявола. Do not auto-invoke for ordinary planning, brainstorming, or ‘what do you think’ — the user must ask to be interrogated. For plain verification of a public fact with no plan behind it, a dedicated fact-checking skill is the better tool."
 argument-hint: "[quick|deep|super] [soft|medium|hard] [product|fund|decision|devil|writing|ideas|proof] [topic]"
 user-invocable: true
 ---
@@ -31,6 +31,14 @@ Detect what you have; never assume:
 - **Local overlay:** if a file named `SUPERGRILL.local.md` exists in this skill's directory or in the project root, read it before recon. It holds the user's private integrations: source names, organisation-specific skills, glossary, default lens, default level. The public protocol never hardcodes any of these. See `SUPERGRILL.local.example.md`.
 
 No absolute paths, no shell assumptions, no OS-specific tooling. The protocol must behave identically everywhere.
+
+## Read-only contract
+
+A grill reads; it never acts. For the whole session: no posting, publishing, sending, emailing; no creating or changing a ticket, issue, record, or remote branch; no calling a connected-source tool whose name implies create / update / delete / send / post / merge. Use the read side of every source. If the user asks for an action mid-grill, finish the question, note the action in the brief, and do it after the grill — or in a separate session.
+
+The only things a grill writes are the brief and, on request, an export.
+
+This is a protocol rule, not a sandbox: nothing in the environment enforces it. The local overlay may name sources that also expose write tools, so they are used read-side only by name.
 
 ## Session start
 
@@ -95,11 +103,13 @@ Then continue.
 
 ## Levels
 
-| Level | Questions | Time | Recon | Evidence rule | Structure |
+| Level | Questions | Span | Recon | Evidence rule | Structure |
 |---|---|---|---|---|---|
-| `quick` | up to 10 | 10–15 min | local only | mark unverified | critical zones only |
-| `deep` | 10–30 | up to 30 min | local + connected sources + web | load-bearing facts verified live, rest per wave | full ladder, adaptive |
-| `super` | staged, 10–15 per stage | multiple sessions | full, Stage 0 report | as deep + document gates per stage | stages with entry requirements |
+| `quick` | up to 10 | one sitting | local only | mark unverified | critical zones only |
+| `deep` | 10–30 | one sitting | local + connected sources + web | load-bearing facts verified live, rest per wave | full ladder, adaptive |
+| `super` | 10–15 per stage, 3–7 stages | several sessions | full, Stage 0 report | as deep + document gates per stage | stages with entry requirements |
+
+A level budgets questions, not minutes: a load-bearing fact verified before the next question costs as much as a question, and the budget moves with it.
 
 Full definitions, recommendation rules, and downgrade rules: `reference/levels.md`. Load it before proposing the setup.
 

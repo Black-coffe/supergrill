@@ -13,7 +13,7 @@ Everything here is optional. Delete what you do not use.
 
 ## Connected sources (read-only)
 
-List the knowledge sources the agent may read during recon and how to recognise them. One line each: name, what it holds, when it is relevant.
+List the knowledge sources the agent may read during recon and how to recognise them. One line each: name, what it holds, when it is relevant. Mark any source that also exposes write tools, so the grill stays on its read side.
 
 - call-archive — meeting and call transcripts via the `recall` tools — relevant for any topic that was discussed with people
 - site-analytics — web analytics via the `statable` tools — relevant for product and marketing topics
