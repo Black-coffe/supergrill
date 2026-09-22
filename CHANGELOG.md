@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased
+## 1.1.0 — 2026-09-22
+
+Discovery is narrower: the skill no longer starts on ordinary planning or brainstorming requests. Thanks to @chizhseo (#1).
 
 Fixed
 - `description` trimmed to 966 characters (the SKILL.md limit is 1,024); duplicate RU/UK trigger forms removed.

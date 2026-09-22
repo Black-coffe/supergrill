@@ -126,7 +126,7 @@ Or in natural language, in any language: *"grill me on the launch plan"*, *"пр
 
 ## Read-only by design
 
-A grill reads and asks; it never acts. Nothing is posted, sent, committed, or changed in any connected system during a session — the only things written are the brief and, on request, an export. The rule lives in the protocol, so it holds on every surface; no sandbox enforces it. In Claude Code you can harden it for specific built-in tools with `disallowed-tools` in the frontmatter of your local copy (`allowed-tools` would not help: it pre-approves tools rather than restricting them, and it cannot express MCP patterns).
+A grill reads and asks; it never acts. Nothing is posted, sent, committed, or changed in any connected system during a session — the only things written are the brief and, on request, an export. The rule lives in the protocol, so it holds on every surface; no sandbox enforces it. In Claude Code you can harden it for specific built-in tools with `disallowed-tools` in the frontmatter of your local copy (`allowed-tools` would not help: it pre-approves tools rather than restricting them).
 
 ## Private overlay
 
